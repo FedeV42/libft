@@ -6,25 +6,27 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:29:28 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:29:29 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:46:17 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_str_is_printable(char *str)
+int	ft_isprint(int c)
 {
-	char	*cadena;
-	int		i;
-
-	cadena = str;
-	i = 0;
-	while (cadena[i] != '\0')
+	if (c < 32 || c > 126)
 	{
-		if (cadena[i] < 32 || cadena[i] > 126)
-		{
-			return (0);
-		}
-		i++;
+		return (0);
 	}
-	return (1);
+	else
+	{
+		return (1);
+	}
 }
+
+/*
+ #include <stdio.h>
+int	main(void)
+{
+    int a = ft_isprint(" ");
+    printf("%d", a);
+	return(0);
+}*/

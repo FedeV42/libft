@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 20:29:16 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/23 19:32:04 by cvazquez         ###   ########.fr       */
+/*   Created: 2022/04/23 12:58:22 by cvazquez          #+#    #+#             */
+/*   Updated: 2022/04/23 18:18:02 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (c >= 0 && c <= 127)
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		return (1);
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
+	return (dst);
 }
-/*
- #include <ctype.h>
- #include <stdio.h>
-int	main(void)
-{
-    int a = ft_isascii("777712313rewrrrereVCXVCX16");
-    printf("%d", a);
-	return(0);
-    
-}*/

@@ -6,47 +6,37 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:29:33 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:29:34 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/21 21:05:44 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlcat(char *dest, char *src, size_t size_dest)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
+	size_t	puntero;
+	size_t	tam;
+	size_t	tam_src;
 
+	puntero = ft_strlen(dest);
+	tam = ft_strlen(dest);
+	tam_src = ft_strlen(src);
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	while (src[j] != '\0')
 	{
-		i++;
+		while (dest[puntero] != '\0' && tam_src < (size_dest - tam - 1))
+		{
+			dest[puntero] = src[i];
+			puntero++;
+			i++;
+		}
+		j++;
 	}
-	return (i);
-}
-
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size_dest)
-{
-    unsigned int i;
-    unsigned int j;
-    unsigned int puntero = ft_strlen(dest);
-    unsigned int tam = ft_strlen(dest);
-    unsigned int tam_src = ft_strlen(src);
-    
-    i = 0;
-    j = 0;
-    
-    while (src[j] != '\0')
-    {
-        while (dest[puntero] !='\0' && tam_src < (size_dest - tam - 1))
-        {
-        dest[puntero] = src[i];
-        puntero++;
-        i++; 
-        }
-    j++;
-    }
-    dest[puntero] = '\0';
-
-    return(tam + tam_src);
+	dest[puntero] = '\0';
+	return (tam + tam_src);
 }
 /*strlcat() appends string src to the end of dst.  It will append at most
      dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate, unless
@@ -62,5 +52,5 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size_dest)
      should be included in dstsize.
      
 
-if (strlcat(pname, file, sizeof(pname)) >= sizeof(pname))
+if	(strlcat(pname, file, sizeof(pname)) >= sizeof(pname))
                    return(error);*/

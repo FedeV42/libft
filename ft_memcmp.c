@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 20:29:16 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/23 19:32:04 by cvazquez         ###   ########.fr       */
+/*   Created: 2022/04/23 12:46:39 by cvazquez          #+#    #+#             */
+/*   Updated: 2022/04/23 18:04:43 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 0 && c <= 127)
+	size_t	j;
+
+	j = 0;
+	while (j < n)
 	{
-		return (1);
+		if (((unsigned char *)s1)[j] == ((unsigned char *)s2)[j])
+		{
+			j++;
+		}
+		else
+		{
+			return (((unsigned char *)s1)[j] - ((unsigned char *)s2)[j]);
+		}
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
-/*
- #include <ctype.h>
- #include <stdio.h>
-int	main(void)
-{
-    int a = ft_isascii("777712313rewrrrereVCXVCX16");
-    printf("%d", a);
-	return(0);
-    
-}*/

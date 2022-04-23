@@ -6,14 +6,15 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:29:44 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:29:45 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:57:52 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -28,6 +29,6 @@ int	ft_strlen(char *str)
 int	main(void)
 {
     char str [] = "123456789";
-    int len = ft_strlen(str);
+    size_t len = ft_strlen(str);
     printf("%d", len);
 }*/

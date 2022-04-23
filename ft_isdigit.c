@@ -6,25 +6,26 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:29:23 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:29:24 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:45:17 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_str_is_numeric(char *str)
+int	ft_isdigit(int c)
 {
-	int		i;
-	char	*cadena;
-
-	cadena = str;
-	i = 0;
-	while (cadena[i] != '\0')
+	if (c < '0' || c > '9')
 	{
-		if (cadena[i] < '0' || cadena[i] > '9')
-		{
-			return (0);
-		}
-		i++;
+		return (0);
 	}
-	return (1);
+	else
+	{
+		return (1);
+	}
 }
+/*
+ #include <stdio.h>
+int	main(void)
+{
+    int a = ft_isdigit("777712313");
+    printf("%d", a);
+	return(0);
+}*/

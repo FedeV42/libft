@@ -6,13 +6,11 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:28:50 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:28:53 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 17:19:39 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {

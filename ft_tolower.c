@@ -6,25 +6,28 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:30:12 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:30:13 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:05:52 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-char	*ft_strlowcase(char *str)
+int	ft_tolower(int c)
 {
-	int		i;
-	char	*cadena;
-
-	i = 0;
-	cadena = str;
-	while (cadena[i] != '\0')
+	if ((c >= 'A') && (c <= 'Z'))
 	{
-		if (cadena[i] > 64 && cadena[i] < 91)
-		{
-			cadena[i] = cadena[i] + ('a' - 'A');
-		}
-		i++;
+		c = c + ('a' - 'A');
 	}
-	return (cadena);
+	return (c);
 }
+/*
+int	main(void)
+{
+	int	a;
+	int	j;
+
+	a = 'J';
+	j = ft_tolower(a);
+	printf("%c\n", j);
+	return (0);
+}*/

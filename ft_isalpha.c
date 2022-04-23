@@ -6,30 +6,27 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:29:09 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:29:10 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:49:09 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_str_is_alpha(char *str)
+int	ft_isalpha(int c)
 {
-	int		i;
-	int		res;
-	char	*cadena;
-
-	cadena = str;
-	i = 0;
-	res = 0;
-	while (cadena[i] != '\0')
+	if (c > 'z' || c < 'a')
 	{
-		if (cadena[i] > 'z' || cadena[i] < 'a')
+		if (c > 'Z' || c < 'A')
 		{
-			if (cadena[i] > 'Z' || cadena[i] < 'A')
-			{
-				return (0);
-			}
+			return (0);
 		}
-		i++;
 	}
 	return (1);
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+    int a = ft_isalpha("rewrrrereªVCXVCXV");
+    printf("%d", a);
+    
+}*/

@@ -6,15 +6,16 @@
 /*   By: cvazquez <cvazquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:29:52 by cvazquez          #+#    #+#             */
-/*   Updated: 2022/04/19 20:29:55 by cvazquez         ###   ########.fr       */
+/*   Updated: 2022/04/23 17:21:50 by cvazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	unsigned int	i;
-	int				valor_retorno;
+	size_t	i;
+	int		valor_retorno;
 
 	i = 0;
 	valor_retorno = 0;
@@ -30,18 +31,17 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (valor_retorno);
 }
 
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
-
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int	main(void)
 {
 	char			s1[] = "Hola Mundo";
 	char			s2[] = "Hello World";
-	unsigned int	n;
+	size_t	n;
 	int				res_orig;
-	unsigned int	res_mifuncion;
+	size_t	res_mifuncion;
 
 	n = 5;
 	res_orig = strncmp(s1, s2, n);
